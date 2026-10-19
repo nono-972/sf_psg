@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Effectif index{% endblock %}
+
+{% block body %}
+    <h1>Effectif index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for effectif in effectifs %}
+            <tr>
+                <td>{{ effectif.id }}</td>
+                <td>{{ effectif.nom }}</td>
+                <td>
+                    <a href="{{ path('app_effectif_show', {'id': effectif.id}) }}">show</a>
+                    <a href="{{ path('app_effectif_edit', {'id': effectif.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_effectif_new') }}">Create new</a>
+{% endblock %}

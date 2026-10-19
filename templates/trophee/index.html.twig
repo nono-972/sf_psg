@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trophee index{% endblock %}
+
+{% block body %}
+    <h1>Trophee index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trophee in trophees %}
+            <tr>
+                <td>{{ trophee.id }}</td>
+                <td>{{ trophee.nom }}</td>
+                <td>
+                    <a href="{{ path('app_trophee_show', {'id': trophee.id}) }}">show</a>
+                    <a href="{{ path('app_trophee_edit', {'id': trophee.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_trophee_new') }}">Create new</a>
+{% endblock %}

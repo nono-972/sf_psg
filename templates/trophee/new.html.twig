@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Trophee{% endblock %}
+
+{% block body %}
+    <h1>Create new Trophee</h1>
+
+    {{ include('trophee/_form.html.twig') }}
+
+    <a href="{{ path('app_trophee_index') }}">back to list</a>
+{% endblock %}

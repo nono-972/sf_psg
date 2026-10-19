@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recompense index{% endblock %}
+
+{% block body %}
+    <h1>Recompense index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Annee</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for recompense in recompenses %}
+            <tr>
+                <td>{{ recompense.id }}</td>
+                <td>{{ recompense.nom }}</td>
+                <td>{{ recompense.annee }}</td>
+                <td>
+                    <a href="{{ path('app_recompense_show', {'id': recompense.id}) }}">show</a>
+                    <a href="{{ path('app_recompense_edit', {'id': recompense.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_recompense_new') }}">Create new</a>
+{% endblock %}

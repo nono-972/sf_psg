@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Trophee{% endblock %}
+
+{% block body %}
+    <h1>Edit Trophee</h1>
+
+    {{ include('trophee/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_trophee_index') }}">back to list</a>
+
+    {{ include('trophee/_delete_form.html.twig') }}
+{% endblock %}
