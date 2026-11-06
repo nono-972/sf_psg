@@ -109,9 +109,9 @@ class Joueur
         return $this->postesecondaire;
     }
 
-    public function setPosteSecondaire(string $poste_secondaire): static
+    public function setPosteSecondaire(string $postesecondaire): static
     {
-        $this->poste_secondaire = $poste_secondaire;
+        $this->postesecondaire = $postesecondaire;
 
         return $this;
     }
